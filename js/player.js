@@ -1,12 +1,17 @@
 export default class Player {
-    constructor(gameWidth, gameHeight) {
+    constructor(imageSrc, xPosition, yPosition) {
+        this.image = new Image();
+        this.image.src = imageSrc;
         this.position = {
-            x: gameWidth / 2,
-            y: gameHeight / 2
+            x: xPosition,
+            y: yPosition
         }
     }
 
-    draw(gameContent, img) {
-        img.onLoad = () => gameContent.drawImage(img, this.position.x, this.position.y);
+    draw(gameContent) {
+        this.image.addEventListener("load", () => {
+            console.log("The hero image has been loaded");
+            gameContent.drawImage(this.image, this.position.x, this.position.y);
+        }, false);
     }
 }

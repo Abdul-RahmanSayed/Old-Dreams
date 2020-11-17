@@ -10,9 +10,6 @@ let bgImage = new Image();
 bgImage.src = "images/background_test.png";
 
 bgImage.onload = () => gameContent.drawImage(bgImage, 0, 0, 800, 600);
-let heroImage = new Image();
-heroImage.src = "images/hero_test.png";
 
-heroImage.onload = () => gameContent.drawImage(heroImage, GAME_WIDTH / 2, GAME_HEIGHT / 2)
-
-
+let player = new Player("../images/hero_test.png", GAME_WIDTH / 2, GAME_HEIGHT / 2);
+player.draw(gameContent);
