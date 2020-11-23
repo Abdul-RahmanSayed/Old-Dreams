@@ -6,10 +6,25 @@ let gameContent = game.getContext("2d");
 const GAME_WIDTH = 800;
 const GAME_HEIGHT = 600;
 
-let bgImage = new Image();
-bgImage.src = "images/background_test.png";
+//Initializes all the images for the game (the player/the enemies/the many game screens)
+let gameStart = new Image();
+let firstBgImage = new Image();
+let monsters = [new Image(), new Image(), new Image(), new Image(), new Image()];
+let startWalls = [];
+let firstLevelWalls = [];
+let boss = new Image();
+gameStart.src = "images/backgrounds/start_screen_example.jpg";
+firstBgImage.src = "images/backgrounds/background_test.png";
+monsters[0].src = "images/units/monster_test.png";
+monsters[1].src = "";
+monsters[2].src = "";
+monsters[3].src = "";
+monsters[4].src = "";
+boss.src = "";
 
-bgImage.onload = () => gameContent.drawImage(bgImage, 0, 0, 800, 600);
-
-let player = new Player("../images/hero_test.png", GAME_WIDTH / 2, GAME_HEIGHT / 2);
+let player = new Player("images/units/hero_test.png", 0, 0);
+let playerSize = player.size();
+player.setyPosition(playerSize * 4);
+//NOTE: setyPosition does not always work; i.e the hero image often loads before the position is updated.
+firstBgImage.onload = () => gameContent.drawImage(firstBgImage, 0, 0, 800, 600);
 player.draw(gameContent);

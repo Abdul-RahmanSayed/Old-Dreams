@@ -6,6 +6,27 @@ export default class Player {
             x: xPosition,
             y: yPosition
         }
+        this.speed = 256;
+    }
+
+    speed() {
+        return this.speed;
+    }
+
+    size() {
+        return this.image.height;
+    }
+
+    position() {
+        return this.position;
+    }
+    
+    setxPosition(xPos) {
+        this.position.x = xPos;
+    }
+
+    setyPosition(yPos) {
+        this.position.y = yPos;
     }
 
     draw(gameContent) {
