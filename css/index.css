@@ -1,6 +1,80 @@
-#gameScreen {
-    border: 1px solid black;
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
+:root {
+    --pixel-size: 2px;
+    background-color: #D6BA73;
+    --grid-cell: calc( var(--pixel-size) * 32);
 }
+
+@media( min-width: 700px ) {
+    :root {
+       --pixel-size: 3px;
+    }
+ }
+@media( min-width: 1000px ) {
+    :root {
+       --pixel-size: 4px;
+    }
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pixel-art {
+    image-rendering: pixelated;
+}
+
+.frame {
+    width: calc(var(--pixel-size) * 160);
+    height: calc(var(--pixel-size) * 144);
+    z-index:1; 
+    position:relative;
+}
+
+.camera {
+    position: relative;
+    border: 1px solid black;
+    width: calc(var(--pixel-size) * 160);
+    height: calc(var(--pixel-size) * 120);
+    overflow: hidden;
+}
+
+.map {
+    position: relative;
+    image-rendering: pixelated;
+    background-image: url("../images/backgrounds/background_test.png");
+    background-size: 100%;
+    width: calc(25 * var(--grid-cell));
+    width: calc(18.75 * var(--grid-cell));
+}
+
+.character {
+    width: calc(var(--grid-cell) * 1.5625);
+    height: calc(var(--grid-cell) * 1.5625);
+    position: absolute;
+    overflow: hidden;
+}
+
+.character_spritesheet {
+    position: absolute;
+    background: url("../images/units/hero_test.png") no-repeat no-repeat;
+    background-size: 100%;
+    width: calc(var(--grid-cell)/4);
+    height: calc(var(--grid-cell)/4);
+}
+
+@keyframes walkAnimation {
+    from {
+      transform: translate3d(0%,0%,0);
+    }
+    to {
+      transform: translate3d(-100%,0%,0);
+    }
+}
+

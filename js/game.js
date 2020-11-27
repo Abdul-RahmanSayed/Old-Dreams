@@ -1,7 +1,8 @@
+/*
 import Player from '/js/player.js';
 
 //Creation of canvas with default 600x800 size
-let game = document.getElementById("gameScreen");
+let game = document.getElementById("camera");
 let gameContent = game.getContext("2d");
 const GAME_WIDTH = 800;
 const GAME_HEIGHT = 600;
@@ -23,8 +24,8 @@ monsters[4].src = "";
 boss.src = "";
 
 let player = new Player("images/units/hero_test.png", 0, 0);
-let playerSize = player.size();
-player.setyPosition(playerSize * 4);
+player.setyPosition(player.size() * 4);
 //NOTE: setyPosition does not always work; i.e the hero image often loads before the position is updated.
 firstBgImage.onload = () => gameContent.drawImage(firstBgImage, 0, 0, 800, 600);
 player.draw(gameContent);
+*/
