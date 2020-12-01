@@ -1,15 +1,15 @@
 :root {
     --pixel-size: 2px;
-    background-color: #D6BA73;
-    --grid-cell: calc( var(--pixel-size) * 32);
+    --bg: #D6BA73;
+    --grid-cell: calc(var(--pixel-size) * 32);
 }
 
-@media( min-width: 700px ) {
+@media(min-width: 700px) {
     :root {
        --pixel-size: 3px;
     }
  }
-@media( min-width: 1000px ) {
+@media(min-width: 1000px) {
     :root {
        --pixel-size: 4px;
     }
@@ -42,6 +42,7 @@ body {
     border: 1px solid black;
     width: calc(var(--pixel-size) * 160);
     height: calc(var(--pixel-size) * 120);
+    background: #311432;
     overflow: hidden;
 }
 
@@ -69,12 +70,16 @@ body {
     height: calc(var(--grid-cell)/4);
 }
 
+.character[walking="true"] .character_spritesheet {
+    animation: walkAnimation 0.6s steps(4) infinite; 
+}
+
 @keyframes walkAnimation {
     from {
-      transform: translate3d(0%,0%,0);
+      transform: translate3d(0%, 0%, 0);
     }
     to {
-      transform: translate3d(-100%,0%,0);
+      transform: translate3d(-100%, 0%, 0);
     }
 }
 
