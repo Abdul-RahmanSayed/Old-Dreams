@@ -5,24 +5,30 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="css/index.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script src="js/newGame.js"></script>
     </head>
     <body>
+        <!--
+            I'm not sure why we need character_spritesheet but its where the actual
+            character image is stored and lets me interact with the environment, so hey
+            if it works i aint bothern.
+        -->
         <div class="frame">
             <div class="camera">
                 <div class="map pixel-art">
-                    <div class="character" walking="true">
+                    <div class="character pixel-art" walking="true">
                         <div class="character_spritesheet pixel-art"></div>
                     </div>
                 </div>
 
             </div>
         </div>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="js/newGame.js"></script>
         <!--
+        |--------------------OLD CODE--------------------------|
         <canvas id="camera" width="800" height="600"></canvas>
         <script type="module" src="js/game.js"></script>
+        |--------------------OLD CODE--------------------------|
         -->
     </body>
 </html>
