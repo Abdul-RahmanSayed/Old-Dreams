@@ -1,3 +1,4 @@
+/*
 export default class Player {
     constructor(imageSrc, xPosition, yPosition) {
         this.image = new Image();
@@ -36,3 +37,4 @@ export default class Player {
         }, false);
     }
 }
+*/
