@@ -1,17 +1,26 @@
 .description {
-    display: block;
-    text-align: center;
-    margin-top: 1rem;
+    font-family: 'Syne Mono', monospace;
+    font-size: 40pt;
+    padding-left: 4vh;
+    color: white;
 }
 
-ul {
+.description ul {
     list-style-type: none;
-    text-decoration: none;
+    font-size: 25pt;
+}
+
+.description b {
+    padding-left: 3.7vh;
+}
+
+#title {
+    font-size: 60pt;
 }
 
 :root {
     --pixel-size: 2px;
-    --bg: #D6BA73;
+    --bg: #000000;
     --grid-cell: calc(var(--pixel-size) * 32);
 }
 
@@ -40,6 +49,8 @@ body {
     justify-content: center;
 }
 
+
+
 /*
 Let's everything scale nicely without any blur.
 */
@@ -66,6 +77,7 @@ Let's everything scale nicely without any blur.
 .map {
     image-rendering: pixelated;
     background-image: url("../images/backgrounds/Dark Room B.png");
+    opacity: 1;
     background-size: 100%;
     width: calc(7.8125 * var(--grid-cell));
     height: calc(7.8125 * var(--grid-cell));
@@ -73,8 +85,10 @@ Let's everything scale nicely without any blur.
 }
 
 .character {
+    image-rendering: pixelated;
     width: calc(var(--grid-cell));
     height: calc(var(--grid-cell));
+    opacity: 1;
     position: absolute;
     overflow: hidden;
 }
