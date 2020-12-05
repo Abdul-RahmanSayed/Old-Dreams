@@ -76,7 +76,6 @@ const movement = () => {
         teleport = true;
         if (teleport) {
             document.querySelector(".map").style.backgroundImage = 'url("../images/backgrounds/Room B.png")';
-            document.querySelector(".map").style.opacity = 0.5;
         }
     } else if (x < leftLimit) {
         x = leftLimit; 
