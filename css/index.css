@@ -1,3 +1,14 @@
+.description {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+ul {
+    list-style-type: none;
+    text-decoration: none;
+}
+
 :root {
     --pixel-size: 2px;
     --bg: #D6BA73;
