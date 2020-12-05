@@ -41,7 +41,6 @@ var y = 30;
 var held_directions = [];
 var speed = 1;
 
-
 //the function that allows the player to move and to hit walls (possibly objects if added)
 const movement = () => {
     var pixelSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--pixel-size'));
@@ -70,12 +69,12 @@ const movement = () => {
     
     var teleport = false;
     
-    if (y > 216 && (x > 100 && x < 125) && map.style.backgroundImage != 'url("../images/backgrounds/Room-B.png")'){
-        x = 117;
-        y = 110;
+    if (y > 216 && (x > 100 && x < 125) && map.style.backgroundImage != "url(../images/backgrounds/Room-B.png)"){
         teleport = true;
         if (teleport) {
-            document.querySelector(".map").style.backgroundImage = 'url("../images/backgrounds/Room-B.png")';
+            document.querySelector(".map").style.backgroundImage = "url(../images/backgrounds/Room-B.png)"; 
+            x = 117;
+            y = 110;
         }
     } else if (x < leftLimit) {
         x = leftLimit; 
