@@ -54,10 +54,10 @@ Let's everything scale nicely without any blur.
 
 .map {
     image-rendering: pixelated;
-    background-image: url("../images/backgrounds/background_test.png");
+    background-image: url("../images/backgrounds/Dark Room B.png");
     background-size: 100%;
-    width: calc(25 * var(--grid-cell));
-    height: calc(18.75 * var(--grid-cell));
+    width: calc(7.8125 * var(--grid-cell));
+    height: calc(7.8125 * var(--grid-cell));
     position: relative;
 }
 
@@ -70,7 +70,7 @@ Let's everything scale nicely without any blur.
 
 .character_spritesheet {
     position: absolute;
-    background: url("../images/units/hero_test.png") no-repeat no-repeat;
+    background: url("../images/units/mc_sprite_1.png") no-repeat no-repeat;
     background-size: 100%;
     width: calc(var(--grid-cell) / 2);
     height: calc(var(--grid-cell) / 2);
