@@ -70,12 +70,12 @@ const movement = () => {
     
     var teleport = false;
     
-    if (y > 216 && (x > 100 && x < 125) && map.style.backgroundImage != 'url("../images/backgrounds/Room B.png")'){
+    if (y > 216 && (x > 100 && x < 125) && map.style.backgroundImage != 'url("../images/backgrounds/Room-B.png")'){
         x = 117;
         y = 110;
         teleport = true;
         if (teleport) {
-            document.querySelector(".map").style.backgroundImage = 'url("../images/backgrounds/Room B.png")';
+            document.querySelector(".map").style.backgroundImage = 'url("../images/backgrounds/Room-B.png")';
         }
     } else if (x < leftLimit) {
         x = leftLimit; 
