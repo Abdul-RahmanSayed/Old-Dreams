@@ -3,11 +3,18 @@
     <head> 
         <title>Old Dreams</title>
         <meta charset="utf-8">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Syne+Mono&family=VT323&display=swap');
+        </style>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="images/MC.png">
         <link rel="stylesheet" type="text/css" href="css/index.css">
     </head>
     <body>
+        <audio src="SCP-x5x.mp3" autoplay loop preload="auto"></audio>
+        <!-- SCP-x5x (Outer Thoughts) Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 3.0 License
+http://creativecommons.org/licenses/by/3.0/ -->
         <div class="frame">
             <div class="camera">
                 <div class="map pixel-art">
@@ -18,15 +25,14 @@
 
             </div>
         </div>
-        <div>
-            <p>
-                <b class="description">By: The Epic Gamer Team</b>
-                <ul>
-                    <li>Programmers: Abdul Sayed, Jorge Aquino</li>
-                    <li>Game Designers: Lindsay Rogers</li>
-                    <li>Artist/Composition: Amadia Tillman, Lindsay Rogers</li>
-                </ul>
-            </p>
+        <div class="description">
+            <b id="title">Old Dreams<br></b>
+            <b id="byline">By: The Epic Gamer Team</b>
+            <ul id="credits">
+                <li>Programmers: Abdul Sayed, Jorge Aquino</li>
+                <li>Game Designers: Lindsay Rogers</li>
+                <li>Art/Composition: Amadia Tillman, Lindsay Rogers</li>
+            </ul>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="js/OldDreams.js"></script>
