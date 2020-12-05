@@ -36,8 +36,8 @@ const keys = {
 }
 
 //Beginning location and state of the character.
-var x = 128;
-var y = 16;
+var x = 20;
+var y = 30;
 var held_directions = [];
 var speed = 1;
 
@@ -63,21 +63,46 @@ const movement = () => {
     character.setAttribute("walking", held_direction ? "true" : "false");
     
     //Walls
+    var topLimit = 12;
+    var bottomLimit = 232 - characterSize;
     var leftLimit = 12;
     var rightLimit = 242 - characterSize;
-    var topLimit = 16;
-    var bottomLimit = 236 - characterSize;
-    if (x < leftLimit) { 
+    
+    var teleport = false;
+    
+    if (y > 216 && (x > 100 && x < 125) && map.style.backgroundImage != 'url("../images/backgrounds/Room B.png")'){
+        x = 117;
+        y = 110;
+        teleport = true;
+        if (teleport) {
+            document.querySelector(".map").style.backgroundImage = 'url("../images/backgrounds/Room B.png")';
+            document.querySelector(".map").style.opacity = 0.5;
+        }
+    } else if (x < leftLimit) {
         x = leftLimit; 
-    }
-    if (x > rightLimit) { 
+        console.log(x, y);
+        teleport = false;
+    } else if (x > rightLimit) { 
         x = rightLimit; 
-    }
-    if (y < topLimit) { 
+        console.log(x, y);
+        teleport = false;
+    } else if (y < topLimit) { 
         y = topLimit;
+        console.log(x, y);
+        teleport = false;
+    } else if (y > bottomLimit) {
+        y = bottomLimit;
+        console.log(x, y);
+        teleport = false;
     }
+
+
+    
+    
+    
     if (y > bottomLimit) {
         y = bottomLimit;
+        console.log(x, y); 
     }
 
     //movement as from the camera
