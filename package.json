@@ -1,0 +1,8 @@
+{
+  "name": "lmc-game",
+  "main": "newGame.js",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node newGame.js"
+  }
+}
