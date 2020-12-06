@@ -76,7 +76,7 @@ Let's everything scale nicely without any blur.
 
 .map {
     image-rendering: pixelated;
-    background-image: url("../images/backgrounds/Dark Room B.png");
+    background-image: url("../images/backgrounds/Room-B.png");
     opacity: 1;
     background-size: 100%;
     width: calc(7.8125 * var(--grid-cell));
