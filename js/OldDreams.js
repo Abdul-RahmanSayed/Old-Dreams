@@ -14,6 +14,9 @@
 var character = document.querySelector(".character");
 var map = document.querySelector(".map");
 
+var cases = ["10001", "00011", "00010", "10111", "01101"];
+var room = cases[0];
+
 let characterSize = 16;
 //getting the character size directly from the css returns a string? that is in the number and "px" in the end
 //getComputedStyle(document.querySelector(".character_spritesheet")).height
@@ -36,8 +39,8 @@ const keys = {
 }
 
 //Beginning location and state of the character.
-var x = 20;
-var y = 30;
+var x = 100;
+var y = 200;
 var held_directions = [];
 var speed = 1;
 
@@ -63,19 +66,38 @@ const movement = () => {
     
     //Walls
     var topLimit = 12;
-    var bottomLimit = 232 - characterSize;
+    var bottomLimit = 216;
     var leftLimit = 12;
-    var rightLimit = 242 - characterSize;
-    
-    var teleport = false;
-    
-    if (!teleport && y > 216 && (x > 100 && x < 125) && map.style.backgroundImage != "url(./images/backgrounds/Room-B.png)"){
-        teleport = true;
-        if (teleport) {
-            document.querySelector(".map").style.backgroundImage = "url(./images/backgrounds/Room-B.png)"; 
-            x = 117;
-            y = 110;
+    var rightLimit = 226;
+
+    const rooms = (aRoom, x, y) => {
+        if (aRoom == cases[0]) {
+            if (y > 216 && (x > 100 && x < 125)) {
+                return cases[2];
+            } else {
+                return cases[0];
+            }
+        } else if (aRoom == cases[2]) {
+            if (y < 12 && (x > 100 && x < 125)) {
+                return cases[0];
+            } else {
+                return cases[2];
+            }
         }
+    }
+    
+    if (room == "10001" && rooms(room, x, y) == "00010"){
+        room = rooms(room, x, y);
+        document.querySelector(".map").style.backgroundImage = "url(./images/backgrounds/Room-T.png)";
+        console.log(x, y);
+        x = 117;
+        y = 14;
+    } else if (room == "00010" && rooms(room, x, y) == "10001") {
+        room = rooms(room, x, y);
+        document.querySelector(".map").style.backgroundImage = "url(./images/backgrounds/Dark-Room-B.png)";
+        console.log(x, y);
+        x = 117;
+        y = 215;
     } else if (x < leftLimit) {
         x = leftLimit; 
         console.log(x, y);
