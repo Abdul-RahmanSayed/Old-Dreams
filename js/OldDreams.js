@@ -69,10 +69,10 @@ const movement = () => {
     
     var teleport = false;
     
-    if (!teleport && y > 216 && (x > 100 && x < 125) && map.style.backgroundImage != "url(../images/backgrounds/Room-B.png)"){
+    if (!teleport && y > 216 && (x > 100 && x < 125) && map.style.backgroundImage != "url(./images/backgrounds/Room-B.png)"){
         teleport = true;
         if (teleport) {
-            document.querySelector(".map").style.backgroundImage = "url(../images/backgrounds/Room-B.png)"; 
+            document.querySelector(".map").style.backgroundImage = "url(./images/backgrounds/Room-B.png)"; 
             x = 117;
             y = 110;
         }
